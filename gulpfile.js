@@ -10,9 +10,7 @@ const browserSync = require('browser-sync').create();
 
 nodeSass.compiler = require('node-sass');
 
-const cssFiles = [
-	'./node_modules/normalize.css/normalize.css',
-];
+
 const scssFiles = [
 	'./node_modules/normalize.css/normalize.css',
 	'./src/sass/**/*.scss'
@@ -25,20 +23,7 @@ const imageFiles = [
 ];
 
 
-function styles() {
-	return gulp
-				.src(cssFiles)
-				.pipe(concat('all.css'))
-				.pipe(autoprefixer({
-            		browsers: ['last 2 versions'],
-            		cascade: false
-        		}))
-        		.pipe(cleanCSS({
-        			level: 2
-        		}))
-				.pipe(gulp.dest('./build/css'))
-				.pipe(browserSync.stream());
-}
+
 function sass() {
 	return gulp
 				.src(scssFiles)
@@ -86,7 +71,6 @@ function clean() {
 }
 
 
-gulp.task('styles', styles);
 gulp.task('scripts', scripts);
 gulp.task('sass', sass);
 gulp.task('images', images);

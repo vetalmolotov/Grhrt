@@ -1,1 +1,36 @@
-@import '_variables';
+@import "variables";
+@import "common";
+@import "product-content";
+
+.product {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 50px 0;
+	& > section {
+		width: 100%;
+		max-width: 1170px;
+	}
+	&-card {
+		display: flex;
+		padding-bottom: 38px;
+		justify-content: space-between;
+		&__left {
+			width: 100%;
+			max-width: 570px;
+		}
+		&__right {
+			width: 100%;
+			max-width: 570px;
+		}
+	}
+	&-image {
+		img {
+			object-fit: cover;
+		}
+	}
+	
+}

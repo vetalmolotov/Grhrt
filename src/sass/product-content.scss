@@ -1,0 +1,104 @@
+@import 'variables';
+@import "common";
+
+.product-content {
+	display: flex;
+	flex-direction: column;
+	&-name {
+		font-family: $Montserrat;
+		font-size: 18px;
+		line-height: 20px;
+		color: $textColorSecondary;
+		text-transform: uppercase;
+		margin-bottom: 35px;
+	}
+	&-price {
+		display: flex;
+		font-size: 30px;
+		font-family: $Montserrat;
+		text-transform: uppercase;
+		line-height: 1.2;
+		font-weight: lighter;
+		color: $textColorPrice;
+		margin-bottom: 40px;
+		&__old {
+			text-decoration: line-through;
+			margin: 0 20px 0 0;
+		}
+		&__new {
+			margin: 0;
+		}
+	}
+	&-clarification {
+		line-height: 30px;
+		margin-bottom: 75px;
+		.clarification-item {
+			line-height: 30px;
+			&-title {
+				font-family: $Montserrat;
+				color: $textColorSecondary;
+				font-size: 13px;
+				text-transform: uppercase;
+			}
+			&-label {
+				font-family: $Roboto;
+				color: $textColorPrimary;
+				font-size: 15px;
+				&__link {
+					color: $textColorTags;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			&.tag {
+				color: $textColorTags;
+			}
+		}
+	}
+	&-description {
+		margin-bottom: 70px;
+		.description-text {
+			color: $textColorPrimary;
+			font-family: $Roboto;
+			font-size: 15px;
+			line-height: 22px;
+			margin: 0 0 15px 0;
+		}
+		.description-list {
+			color: $textColorPrimary;
+			font-family: $Roboto;
+			font-size: 15px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			line-height: 24px;
+			li {
+				position: relative;
+				padding-left: 15px;
+				&::before {
+					content: '';
+					width: 3px;
+					height: 3px;
+					position: absolute;
+					left: 0;
+					top: 10px;
+					border-radius: 50%;
+					background: $textColorPrimary;
+				}
+			}
+		}
+	}
+	&-actions {
+		display: flex;
+		justify-content: space-between;
+		.button-cart {
+			max-width: 240px;
+			margin-right: 20px;
+		}
+		.button-lookbook {
+			max-width: 303px;
+		}
+	}
+}
