@@ -8,6 +8,9 @@
 	align-items: center;
 	flex-direction: column;
 	padding: 50px;
+	@media screen and (max-width: 640px) {
+		padding: 50px 10px;
+	}
 	& > section {
 		width: 100%;
 		max-width: 1170px;
@@ -16,14 +19,26 @@
 		display: flex;
 		padding-bottom: 38px;
 		justify-content: space-between;
+		@media screen and (max-width: 790px) {
+			justify-content: flex-start;
+			flex-direction: column;
+		}
 		&__left {
 			width: 100%;
 			max-width: 570px;
+			@media screen and (max-width: 790px) {
+				max-width: 100%;
+			}
 		}
 		&__right {
 			width: 100%;
 			max-width: 570px;
 			margin-left: 20px;
+			@media screen and (max-width: 790px) {
+				max-width: 100%;
+				margin-left: 0;
+				margin-top: 20px;
+			}
 		}
 	}
 	&-image {

@@ -11,6 +11,9 @@
 		color: $textColorSecondary;
 		text-transform: uppercase;
 		margin-bottom: 35px;
+		@media screen and (max-width: 790px) {
+			margin-bottom: 20px;
+		}
 	}
 	&-price {
 		display: flex;
@@ -21,6 +24,9 @@
 		font-weight: lighter;
 		color: $textColorPrice;
 		margin-bottom: 40px;
+		@media screen and (max-width: 790px) {
+			margin-bottom: 20px;
+		}
 		&__old {
 			text-decoration: line-through;
 			margin: 0 20px 0 0;
@@ -32,6 +38,9 @@
 	&-clarification {
 		line-height: 30px;
 		margin-bottom: 75px;
+		@media screen and (max-width: 790px) {
+			margin-bottom: 20px;
+		}
 		.clarification-item {
 			line-height: 30px;
 			&-title {
@@ -59,6 +68,9 @@
 	}
 	&-description {
 		margin-bottom: 70px;
+		@media screen and (max-width: 790px) {
+			margin-bottom: 20px;
+		}
 		.description-text {
 			color: $textColorPrimary;
 			font-family: $Roboto;
