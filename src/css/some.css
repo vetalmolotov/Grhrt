@@ -1,0 +1,6 @@
+body {
+	color: grey;
+}
+.row {
+	display: flex;
+}
