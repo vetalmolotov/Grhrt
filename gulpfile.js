@@ -12,26 +12,18 @@ nodeSass.compiler = require('node-sass');
 
 const cssFiles = [
 	'./node_modules/normalize.css/normalize.css',
-	'./src/css/some.css',
-	'./src/css/other.css'
 ];
 const scssFiles = [
 	'./node_modules/normalize.css/normalize.css',
 	'./src/sass/**/*.scss'
 ];
 const jsFiles = [
-	'./src/js/lib.js',
-	'./src/js/some.js'
-];
-const fontFiles = [
-	'./src/fonts/*.{ttf,woff,woff2,eot,svg}'
+	'./src/js/lib.js'
 ];
 const imageFiles = [
 	'./src/img/*.{png,jpg,jpeg}'
 ];
-const assetsFiles = [
-	'./src/assets/*.svg'
-];
+
 
 function styles() {
 	return gulp
@@ -70,22 +62,10 @@ function scripts() {
 				.pipe(browserSync.stream());
 
 }
-function fonts() {
-	return gulp
-				.src(fontFiles)
-				.pipe(gulp.dest('./build/fonts/'))
-				.pipe(browserSync.stream());
-}
 function images() {
 	return gulp
 		.src(imageFiles)
 		.pipe(gulp.dest('./build/img/'))
-		.pipe(browserSync.stream());
-}
-function assets() {
-	return gulp
-		.src(assetsFiles)
-		.pipe(gulp.dest('./build/assets/'))
 		.pipe(browserSync.stream());
 }
 
@@ -97,7 +77,6 @@ function watch() {
     });
 	gulp.watch('./src/sass/**/*.scss', sass);
 	gulp.watch('./src/js/**/*.js', scripts);
-	gulp.watch('./src/fonts/**/*.{ttf,woff,woff2,eot,svg}', fonts);
 	gulp.watch('./**/*.html', browserSync.reload);
 }
 
@@ -110,13 +89,11 @@ function clean() {
 gulp.task('styles', styles);
 gulp.task('scripts', scripts);
 gulp.task('sass', sass);
-gulp.task('fonts', fonts);
 gulp.task('images', images);
-gulp.task('assets', assets);
 gulp.task('watch', watch);
 
 gulp.task('build', gulp.series(clean,
-							gulp.parallel(sass, fonts, images, assets, scripts)
+							gulp.parallel(sass, images, scripts)
 						));
 gulp.task('dev', gulp.series('build', 'watch'));
 
