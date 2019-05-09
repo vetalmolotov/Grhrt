@@ -29,6 +29,10 @@ function sass() {
 				.src(scssFiles)
         		.pipe(nodeSass.sync().on('error', nodeSass.logError))
         		.pipe(concat('styles.css'))
+				.pipe(autoprefixer({
+					browsers: ['last 2 versions'],
+					cascade: false
+				}))
 				.pipe(cleanCSS({
         			level: 2
         		}))
